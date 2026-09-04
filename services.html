@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Services — Soardale Resources</title>
+  <meta name="description"
+    content="Crop production, livestock, aquaculture and apiary services from Soardale Resources Agro-Allied & Food Company.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .service-block {
+      padding: 64px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .service-block:first-of-type {
+      border-top: none;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 52px;
+      align-items: flex-start;
+    }
+
+    .service-media {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 110px;
+    }
+
+    .service-media img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .sub-list {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 26px;
+    }
+
+    .sub-list .item {
+      padding-left: 18px;
+      border-left: 2px solid var(--wheat-2);
+    }
+
+    .sub-list .item h4 {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .sub-list .item p {
+      font-size: 0.88rem;
+      margin: 0;
+    }
+
+    @media (max-width:900px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-media {
+        position: static;
+      }
+
+      .sub-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="nav-row">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/navbar-logo.png" alt="Soardale Resources Logo">
+        </span>
+        <span>Soardale Resources<span class="brand-sub">Agro-Allied &amp; Food Co.</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn btn-amber nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+  <section class="page-header">
+    <div class="container">
+      <div class="eyebrow">What we produce</div>
+      <h1>Four units. One farm.</h1>
+      <p>Crop production, livestock, aquaculture and apiary work — each run by people who know the difference between a
+        good season and a lucky one.</p>
+    </div>
+  </section>
+
+  <section class="container">
+
+    <div class="service-block reveal">
+      <div class="service-grid">
+        <div class="service-media"><img src="https://soardale.com/assets/img/portfolio/maize.png"
+            alt="Crop production at Soardale Resources"></div>
+        <div>
+          <div class="eyebrow">Unit 01</div>
+          <h2>Crop Production</h2>
+          <p>Field crops grown for scale and consistency — from land preparation through to post-harvest handling, with
+            an eye on the varieties that perform best in our soil and climate.</p>
+          <div class="sub-list">
+            <div class="item">
+              <h4>Maize</h4>
+              <p>Grain and certified seed maize, grown for both household consumption and industrial buyers.</p>
+            </div>
+            <div class="item">
+              <h4>Paddy rice</h4>
+              <p>Cultivated and processed through to milled rice ready for market.</p>
+            </div>
+            <div class="item">
+              <h4>Soya beans</h4>
+              <p>Grown for food, feed, and industrial oil markets.</p>
+            </div>
+            <div class="item">
+              <h4>Cassava</h4>
+              <p>Cultivated and processed into flour, starch and related products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-grid">
+        <div class="service-media"><img src="https://soardale.com/assets/img/portfolio/poultry.png"
+            alt="Animal production at Soardale Resources"></div>
+        <div>
+          <div class="eyebrow">Unit 02</div>
+          <h2>Animal Production &amp; Processing</h2>
+          <p>Housing, nutrition and health management built around each species — raised for meat, eggs and breeding
+            stock, with biosecurity taken seriously at every pen.</p>
+          <div class="sub-list">
+            <div class="item">
+              <h4>Poultry</h4>
+              <p>Layers for egg production, plus cockerel and broiler production for meat.</p>
+            </div>
+            <div class="item">
+              <h4>Piggery</h4>
+              <p>Pork and bacon production, from weaning through to finishing.</p>
+            </div>
+            <div class="item">
+              <h4>Sheep &amp; goats</h4>
+              <p>Rearing and fattening for meat markets.</p>
+            </div>
+            <div class="item">
+              <h4>Small &amp; large ruminants</h4>
+              <p>Rabbit, grasscutter and cattle production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-grid">
+        <div class="service-media"><img src="https://soardale.com/assets/img/portfolio/Catfish.png"
+            alt="Aquaculture production at Soardale Resources"></div>
+        <div>
+          <div class="eyebrow">Unit 03</div>
+          <h2>Aquaculture Production</h2>
+          <p>Pond-managed fish farming with close attention to water quality, feeding schedules and disease prevention —
+            carried from fingerling to market-ready size.</p>
+          <div class="sub-list">
+            <div class="item">
+              <h4>Catfish</h4>
+              <p>Raised in managed ponds through to market weight.</p>
+            </div>
+            <div class="item">
+              <h4>Tilapia</h4>
+              <p>Farmed alongside catfish under the same water-management standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-grid">
+        <div class="service-media"><img src="https://soardale.com/assets/img/portfolio/Honey.png"
+            alt="Apiary and honey production at Soardale Resources"></div>
+        <div>
+          <div class="eyebrow">Unit 04</div>
+          <h2>Apiary &amp; Honey Production</h2>
+          <p>Managed hives, tended for healthy colonies and a clean, pure harvest — extracted, filtered and bottled on
+            site.</p>
+          <div class="sub-list">
+            <div class="item">
+              <h4>Apiary management</h4>
+              <p>Hive construction, placement and colony health maintained year-round.</p>
+            </div>
+            <div class="item">
+              <h4>Honey production</h4>
+              <p>Harvested, filtered and bottled honey, plus other hive products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="furrow"></div>
+
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="hero-grid" style="align-items:center;">
+        <div class="reveal">
+          <div class="eyebrow">Consultancy</div>
+          <h2>Talk to the people running the farm.</h2>
+          <p style="max-width:44ch;">Whether you're sourcing produce, exploring a partnership, or want advice on setting
+            up a unit of your own — our team is reachable directly.</p>
+          <a href="tel:+2349052133711" class="btn btn-amber" style="margin-top:10px;">Call us today <span
+              class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Soardale Resources</div>
+          <p style="color:rgba(243,239,226,0.7); font-size:0.9rem; max-width:32ch;">Agro-allied and food company
+            producing crops, livestock, fish and honey from Abeokuta, Ogun State.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="team.html">Team</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="#!">Privacy Policy</a>
+          <a href="#!">Terms of Use</a>
+        </div>
+        <div class="footer-col">
+          <h4>Reach us</h4>
+          <a href="tel:+2349052133711">+234 905 213 3711</a>
+          <a href="mailto:soardaleresourcesfarm@gmail.com">soardaleresourcesfarm@gmail.com</a>
+          <a href="https://maps.app.goo.gl/QgJQzM6Vur3eki3x9">Abeokuta, Ogun State</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Soardale Resources Agro-Allied &amp; Food Company.</span>
+        <span>Dale Eagle Seed Ltd — licensed seed subsidiary.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
