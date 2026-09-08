@@ -55,14 +55,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Job description modals
+  // Modals (services & careers)
   var modalTriggers = document.querySelectorAll('[data-open-modal]');
   var modalOverlays = document.querySelectorAll('.modal-overlay');
   modalTriggers.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    function openModal() {
       var id = btn.getAttribute('data-open-modal');
       var overlay = document.getElementById(id);
       if (overlay) overlay.classList.add('open');
+    }
+    btn.addEventListener('click', openModal);
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal();
+      }
     });
   });
   modalOverlays.forEach(function (overlay) {

@@ -48,22 +48,64 @@
       margin-top: 26px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px 26px;
+      gap: 16px 22px;
     }
 
     .sub-list .item {
-      padding-left: 18px;
-      border-left: 2px solid var(--wheat-2);
+      padding: 14px 18px;
+      border-left: 3px solid var(--wheat-2);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .sub-list .item:hover {
+      background: var(--wheat-3);
+      border-left-color: var(--amber);
+      transform: translateX(4px);
+      box-shadow: 0 8px 20px -6px rgba(20, 16, 10, 0.08);
     }
 
     .sub-list .item h4 {
-      margin-bottom: 4px;
-      font-size: 1rem;
+      margin-bottom: 5px;
+      font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--forest-2);
+    }
+
+    .sub-list .item .item-arrow {
+      font-size: 0.9rem;
+      color: var(--amber);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all 0.2s ease;
+    }
+
+    .sub-list .item:hover .item-arrow {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .sub-list .item p {
       font-size: 0.88rem;
       margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .sub-list .item .item-badge {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--amber);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     @media (max-width:900px) {
@@ -125,21 +167,29 @@
           <p>Field crops grown for scale and consistency — from land preparation through to post-harvest handling, with
             an eye on the varieties that perform best in our soil and climate.</p>
           <div class="sub-list">
-            <div class="item">
-              <h4>Maize</h4>
+            <div class="item" data-open-modal="modal-maize" role="button" tabindex="0"
+              aria-label="Learn more about Maize production">
+              <h4><span>Maize</span> <span class="item-arrow">→</span></h4>
               <p>Grain and certified seed maize, grown for both household consumption and industrial buyers.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Paddy rice</h4>
+            <div class="item" data-open-modal="modal-rice" role="button" tabindex="0"
+              aria-label="Learn more about Paddy rice production">
+              <h4><span>Paddy rice</span> <span class="item-arrow">→</span></h4>
               <p>Cultivated and processed through to milled rice ready for market.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Soya beans</h4>
+            <div class="item" data-open-modal="modal-soybeans" role="button" tabindex="0"
+              aria-label="Learn more about Soybeans production">
+              <h4><span>Soya beans</span> <span class="item-arrow">→</span></h4>
               <p>Grown for food, feed, and industrial oil markets.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Cassava</h4>
+            <div class="item" data-open-modal="modal-cassava" role="button" tabindex="0"
+              aria-label="Learn more about Cassava production">
+              <h4><span>Cassava</span> <span class="item-arrow">→</span></h4>
               <p>Cultivated and processed into flour, starch and related products.</p>
+              <span class="item-badge">Explore →</span>
             </div>
           </div>
         </div>
@@ -156,21 +206,29 @@
           <p>Housing, nutrition and health management built around each species — raised for meat, eggs and breeding
             stock, with biosecurity taken seriously at every pen.</p>
           <div class="sub-list">
-            <div class="item">
-              <h4>Poultry</h4>
+            <div class="item" data-open-modal="modal-poultry" role="button" tabindex="0"
+              aria-label="Learn more about Poultry production">
+              <h4><span>Poultry</span> <span class="item-arrow">→</span></h4>
               <p>Layers for egg production, plus cockerel and broiler production for meat.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Piggery</h4>
+            <div class="item" data-open-modal="modal-piggery" role="button" tabindex="0"
+              aria-label="Learn more about Piggery management">
+              <h4><span>Piggery</span> <span class="item-arrow">→</span></h4>
               <p>Pork and bacon production, from weaning through to finishing.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Sheep &amp; goats</h4>
+            <div class="item" data-open-modal="modal-sheep-goats" role="button" tabindex="0"
+              aria-label="Learn more about Sheep and goats production">
+              <h4><span>Sheep &amp; goats</span> <span class="item-arrow">→</span></h4>
               <p>Rearing and fattening for meat markets.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Small &amp; large ruminants</h4>
+            <div class="item" data-open-modal="modal-ruminants" role="button" tabindex="0"
+              aria-label="Learn more about Small and large ruminants">
+              <h4><span>Small &amp; large ruminants</span> <span class="item-arrow">→</span></h4>
               <p>Rabbit, grasscutter and cattle production.</p>
+              <span class="item-badge">Explore →</span>
             </div>
           </div>
         </div>
@@ -187,13 +245,17 @@
           <p>Pond-managed fish farming with close attention to water quality, feeding schedules and disease prevention —
             carried from fingerling to market-ready size.</p>
           <div class="sub-list">
-            <div class="item">
-              <h4>Catfish</h4>
+            <div class="item" data-open-modal="modal-catfish" role="button" tabindex="0"
+              aria-label="Learn more about Catfish aquaculture">
+              <h4><span>Catfish</span> <span class="item-arrow">→</span></h4>
               <p>Raised in managed ponds through to market weight.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Tilapia</h4>
+            <div class="item" data-open-modal="modal-tilapia" role="button" tabindex="0"
+              aria-label="Learn more about Tilapia aquaculture">
+              <h4><span>Tilapia</span> <span class="item-arrow">→</span></h4>
               <p>Farmed alongside catfish under the same water-management standards.</p>
+              <span class="item-badge">Explore →</span>
             </div>
           </div>
         </div>
@@ -210,13 +272,17 @@
           <p>Managed hives, tended for healthy colonies and a clean, pure harvest — extracted, filtered and bottled on
             site.</p>
           <div class="sub-list">
-            <div class="item">
-              <h4>Apiary management</h4>
+            <div class="item" data-open-modal="modal-apiary" role="button" tabindex="0"
+              aria-label="Learn more about Apiary management">
+              <h4><span>Apiary management</span> <span class="item-arrow">→</span></h4>
               <p>Hive construction, placement and colony health maintained year-round.</p>
+              <span class="item-badge">Explore →</span>
             </div>
-            <div class="item">
-              <h4>Honey production</h4>
+            <div class="item" data-open-modal="modal-honey" role="button" tabindex="0"
+              aria-label="Learn more about Honey production">
+              <h4><span>Honey production</span> <span class="item-arrow">→</span></h4>
               <p>Harvested, filtered and bottled honey, plus other hive products.</p>
+              <span class="item-badge">Explore →</span>
             </div>
           </div>
         </div>
@@ -243,70 +309,536 @@
   </section>
 
   <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <div class="footer-brand">
-              <a href="index.html" class="">
-                <span class="brand-mark">
-                  <img
-                    src="assets/img/navbar-logo.png"
-                    alt="Soardale Resources Logo"
-                  />
-                </span>
-                <span
-                  >Soardale Resources<span class="brand-sub" style="color: #fff;"
-                    >Agro-Allied &amp; Food Co.</span
-                  ></span
-                >
-              </a>
-            </div>
-            <p
-              style="
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <a href="index.html" class="">
+              <span class="brand-mark">
+                <img src="assets/img/navbar-logo.png" alt="Soardale Resources Logo" />
+              </span>
+              <span>Soardale Resources<span class="brand-sub" style="color: #fff;">Agro-Allied &amp; Food
+                  Co.</span></span>
+            </a>
+          </div>
+          <p style="
                 color: rgba(243, 239, 226, 0.7);
                 font-size: 0.9rem;
                 max-width: 32ch;
-              "
-            >
-              Agro-allied and food company producing crops, livestock, fish and
-              honey from Abeokuta, Ogun State.
-            </p>
-          </div>
-          <div class="footer-col">
-            <h4>Site</h4>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="team.html">Team</a>
-            <a href="gallery.html">Gallery</a>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="careers.html">Careers</a>
-            <a href="contact.html">Contact</a>
-            <a href="#!">Privacy Policy</a>
-            <a href="#!">Terms of Use</a>
-          </div>
-          <div class="footer-col">
-            <h4>Reach us</h4>
-            <a href="tel:+2349052133711">+234 905 213 3711</a>
-            <a href="tel:+2347039133094">+234 703 913 3094</a>
-            <a href="mailto:soardaleresourcesfarm@gmail.com"
-              >soardaleresourcesfarm@gmail.com</a
-            >
-            <a href="mailto:daleeaglessedsltd@gmail.com"
-              >daleeaglessedsltd@gmail.com</a
-            >
-            <a href="https://maps.app.goo.gl/QgJQzM6Vur3eki3x9">
-              No.19, Fatola Estate, Camp, Abeokuta, Ogun State, Nigeria.</a
-            >
-          </div>
+              ">
+            Agro-allied and food company producing crops, livestock, fish and
+            honey from Abeokuta, Ogun State.
+          </p>
         </div>
-        <div class="footer-bottom">
-          <span>© 2026 Soardale Resources Agro-Allied &amp; Food Company.</span>
-          <span>Dale Eagle Seed Ltd — licensed seed subsidiary.</span>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="team.html">Team</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="#!">Privacy Policy</a>
+          <a href="#!">Terms of Use</a>
+        </div>
+        <div class="footer-col">
+          <h4>Reach us</h4>
+          <a href="tel:+2349052133711">+234 905 213 3711</a>
+          <a href="tel:+2347039133094">+234 703 913 3094</a>
+          <a href="mailto:soardaleresourcesfarm@gmail.com">soardaleresourcesfarm@gmail.com</a>
+          <a href="mailto:daleeaglessedsltd@gmail.com">daleeaglessedsltd@gmail.com</a>
+          <a href="https://maps.app.goo.gl/QgJQzM6Vur3eki3x9">
+            No.19, Fatola Estate, Camp, Abeokuta, Ogun State, Nigeria.</a>
         </div>
       </div>
-    </footer>
+      <div class="footer-bottom">
+        <span>© 2026 Soardale Resources Agro-Allied &amp; Food Company.</span>
+        <span>Dale Eagle Seed Ltd — licensed seed subsidiary.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== Service Modals ===================== -->
+
+  <!-- Unit 01: Crop Production Modals -->
+  <div class="modal-overlay" id="modal-maize">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Maize Production: From Seed to Harvest</div>
+      <div class="job-meta">
+        <span class="tag">Unit 01: Crop Production</span>
+        <span class="tag">Certified Seed (Dale Eagle Seeds)</span>
+        <span class="tag">Commercial Grain</span>
+      </div>
+      <p>
+        Commercial maize cultivation at Soardale Resources is engineered for scale, genetic purity, and consistent grain
+        yield. In partnership with our licensed subsidiary, Dale Eagle Seeds Ltd, we cultivate both high-yield certified
+        seed varieties and bulk commercial maize for human consumption, industrial milling, and livestock feed
+        compounding.
+      </p>
+      <h4>Agronomic Lifecycle &amp; Best Practices</h4>
+      <ul>
+        <li><strong>Variety Selection:</strong> High-yielding, drought-tolerant, and disease-resistant hybrid and
+          open-pollinated varieties (SAMMAZ series).</li>
+        <li><strong>Land Preparation:</strong> Deep disc plowing, harrowing, and precision ridging to maximize root
+          penetration and moisture conservation.</li>
+        <li><strong>Nutrient Management:</strong> Basal NPK fertilizer application followed by targeted urea
+          side-dressing during active vegetative growth.</li>
+        <li><strong>Pest &amp; Fall Armyworm Defense:</strong> Proactive integrated pest management (IPM) with
+          biological controls and scheduled scouting.</li>
+        <li><strong>Harvesting &amp; Conditioning:</strong> Cobs harvested at physiological maturity, mechanically
+          dehusked, and conditioned down to ≤12.5% moisture for long-term safe storage.</li>
+      </ul>
+      <h4>Commercial Supply &amp; Offtake</h4>
+      <ul>
+        <li>Certified seed maize in tagged, tamper-proof bags for farmers and commercial outgrowers</li>
+        <li>High-grade yellow and white maize grain for feed millers and food processors</li>
+        <li>Bulk supply with certified moisture, purity, and germination ratings</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Produce / Seed <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-rice">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Paddy Rice Cultivation &amp; Precision Milling</div>
+      <div class="job-meta">
+        <span class="tag">Unit 01: Crop Production</span>
+        <span class="tag">Lowland &amp; Swamp Ecology</span>
+        <span class="tag">Stone-Free Table Rice</span>
+      </div>
+      <p>
+        Our paddy rice operations combine sustainable wetland soil stewardship with modern water management and
+        post-harvest milling. We cultivate proven high-yield FARO cultivars that deliver exceptional tillering capacity,
+        uniform grain filling, and outstanding culinary quality.
+      </p>
+      <h4>Cultivation &amp; Field Operations</h4>
+      <ul>
+        <li><strong>Nursery &amp; Transplanting:</strong> Raised-bed nursery management followed by precision 20cm ×
+          20cm hill transplanting into puddled, leveled paddies.</li>
+        <li><strong>Water Control:</strong> Controlled bunding and drainage systems ensuring optimum water depth during
+          tillering and panicle initiation.</li>
+        <li><strong>Weed &amp; Avian Management:</strong> Integrated weed suppression and continuous bird monitoring
+          during the milky-to-dough grain stage.</li>
+        <li><strong>Harvesting:</strong> Timely sickling and mechanical threshing at 20-22% moisture to prevent grain
+          cracking and sun-checking.</li>
+      </ul>
+      <h4>Milling &amp; Market Readiness</h4>
+      <ul>
+        <li>Hot-water soaking and controlled steam parboiling to lock in vital nutrients within the grain</li>
+        <li>Multi-pass de-stoning, de-husking, polishing, and optical grading</li>
+        <li>100% stone-free, whole-grain table rice and broken rice for brewing and animal feeds</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Inquire on Rice Supply <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-soybeans">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Soybean Farming: Feed Grade &amp; Industrial Oil</div>
+      <div class="job-meta">
+        <span class="tag">Unit 01: Crop Production</span>
+        <span class="tag">High-Protein Legume</span>
+        <span class="tag">Soil Nitrogen Fixer</span>
+      </div>
+      <p>
+        Soybeans play a central double role at Soardale Resources: providing high-protein raw material for the
+        commercial animal feed and edible oil industries while replenishing soil nitrogen through biological fixation as
+        part of our sustainable crop rotation strategy.
+      </p>
+      <h4>Agronomy &amp; Crop Management</h4>
+      <ul>
+        <li><strong>Inoculation &amp; Seeding:</strong> Seed treatment with <em>Bradyrhizobium japonicum</em> for
+          vigorous root nodulation and nitrogen fixation.</li>
+        <li><strong>Bed Preparation:</strong> Well-drained, friable seedbeds planted in optimum moisture windows to
+          guarantee high emergence rates.</li>
+        <li><strong>Canopy Development:</strong> Rapid early-season weed control allowing dense canopy closure to
+          conserve soil moisture and naturally shade out weeds.</li>
+        <li><strong>Harvest Timing:</strong> Strict monitoring of pod color and moisture (13-14%) to harvest before pod
+          shattering occurs.</li>
+      </ul>
+      <h4>Industrial Applications &amp; Products</h4>
+      <ul>
+        <li>High-protein clean soybean grain for poultry and livestock feed compounding</li>
+        <li>High-oil content beans supplied for industrial solvent extraction and vegetable oil refining</li>
+        <li>Soybean cake and meal by-products for commercial livestock rations</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Request Soybean Quote <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cassava">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Commercial Cassava Cultivation &amp; Processing</div>
+      <div class="job-meta">
+        <span class="tag">Unit 01: Crop Production</span>
+        <span class="tag">High-Starch TME Cultivars</span>
+        <span class="tag">Value Addition</span>
+      </div>
+      <p>
+        Cassava is a resilient pillar of our crop unit. We grow improved high-tonnage, disease-resistant stems and link
+        harvesting directly to our on-farm and partner processing hubs to prevent post-harvest physiological
+        deterioration and extract maximum value.
+      </p>
+      <h4>Production &amp; Agronomic Protocols</h4>
+      <ul>
+        <li><strong>Certified Stem Cuttings:</strong> 20–25cm mature, pest-free stem cuttings planted angled or
+          horizontal on structured mounds and ridges.</li>
+        <li><strong>Weed Management:</strong> Strict weed-free maintenance during the critical first 90 days until full
+          leaf canopy establishment.</li>
+        <li><strong>Extended Growth Cycle:</strong> 10–12 month maturation ensuring maximum tuber dry-matter content and
+          heavy yield per hectare (25–35 t/ha).</li>
+        <li><strong>Selective Harvest:</strong> Mechanical and manual uprooting timed to coincide with immediate
+          same-day processing.</li>
+      </ul>
+      <h4>Processed Derivatives &amp; Value Chains</h4>
+      <ul>
+        <li>High-Quality Cassava Flour (HQCF) for industrial bakery and confectionary blending</li>
+        <li>Hygienically processed, crisp, and stone-free table garri and fufu mash</li>
+        <li>Sun-dried and kiln-cured cassava chips and peel mash for livestock feed</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Cassava / Flour <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 02: Animal Production & Processing Modals -->
+  <div class="modal-overlay" id="modal-poultry">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Modern Poultry Operations &amp; Egg Production</div>
+      <div class="job-meta">
+        <span class="tag">Unit 02: Animal Production</span>
+        <span class="tag">Layers &amp; Broilers</span>
+        <span class="tag">Strict Biosecurity</span>
+      </div>
+      <p>
+        Soardale's poultry facility operates climate-ventilated housing and bio-secure pens designed for high bird
+        comfort, low mortality, and superior feed conversion efficiency across commercial egg production and meat bird
+        fattening.
+      </p>
+      <h4>Flock Management &amp; Hygiene Standards</h4>
+      <ul>
+        <li><strong>Layer Management:</strong> High-performance brown egg layer flocks maintained on automated feeding
+          lines with daily egg grading and crating.</li>
+        <li><strong>Broiler &amp; Cockerel Rearing:</strong> Optimized brooding, gradual temperature stepping, and
+          nutrient-dense starter/finisher diets for rapid, uniform growth.</li>
+        <li><strong>Strict Biosecurity:</strong> Sanitized vehicle dip baths, personnel footbaths, routine serological
+          testing, and comprehensive vaccination protocols (Newcastle, Gumboro, Fowl Typhoid).</li>
+        <li><strong>Water &amp; Feed Quality:</strong> Pure borehole water with automated medicators and
+          laboratory-tested feed free of aflatoxins.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Farm-fresh table eggs in wholesale crates (small, medium, large, and jumbo grades)</li>
+        <li>Hygienically dressed and blast-frozen whole broiler chickens and cuts</li>
+        <li>Live Point-of-Lay (POL) pullets and mature cockerels for festive and commercial buyers</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Eggs &amp; Poultry <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-piggery">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Intensive Piggery Husbandry &amp; Pork Supply</div>
+      <div class="job-meta">
+        <span class="tag">Unit 02: Animal Production</span>
+        <span class="tag">Breeding Stock &amp; Weaners</span>
+        <span class="tag">Finishing to 80–100kg</span>
+      </div>
+      <p>
+        Our intensive swine production unit utilizes modern slotted-pen designs, superior genetic bloodlines, and
+        balanced nutrition to produce clean, high-yielding pork while maintaining exemplary environmental and animal
+        welfare standards.
+      </p>
+      <h4>Breeding &amp; Husbandry Protocols</h4>
+      <ul>
+        <li><strong>Breeding Genetics:</strong> Large White, Landrace, and Duroc crossbred sows and boars selected for
+          prolific litter sizes and exceptional mothering ability.</li>
+        <li><strong>Farrowing Care:</strong> Dedicated farrowing crates with creep heating zones and crush rails to
+          maximize piglet survival rates.</li>
+        <li><strong>Weaner Transition:</strong> High-density digestible creep feeds transitioning smoothly to grower
+          rations with automated nipple drinkers.</li>
+        <li><strong>Sanitation &amp; Waste Recycling:</strong> Twice-daily pen washdowns, slotted drainage, and organic
+          manure collection for biogas and field fertilization.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Vigorous, vaccinated weaners (8–10 weeks) and growers for pig farmers</li>
+        <li>Market-ready finished baconers and porkers (75kg – 100kg live weight)</li>
+        <li>Selected breeding gilts and performance boars for herd genetic improvement</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Piggery Inquiries <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-sheep-goats">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Sheep &amp; Goat Rearing &amp; Intensive Fattening</div>
+      <div class="job-meta">
+        <span class="tag">Unit 02: Animal Production</span>
+        <span class="tag">Small Ruminants</span>
+        <span class="tag">Ram Fattening Schemes</span>
+      </div>
+      <p>
+        Soardale's small ruminant unit blends semi-intensive pasture browsing with formulated feedlot rations. We
+        specialize in rearing resilient indigenous breeds and executing targeted ram fattening programs for festive and
+        commercial culinary markets.
+      </p>
+      <h4>Breeding &amp; Management Standards</h4>
+      <ul>
+        <li><strong>Adapted Breeds:</strong> Red Sokoto, Sahelian, and West African Dwarf goats; Balami, Uda, and
+          Yankasa sheep crosses.</li>
+        <li><strong>Housing Architecture:</strong> Raised slatted-floor pens that prevent hoof rot, facilitate droppings
+          collection, and provide dry, well-ventilated shelter.</li>
+        <li><strong>Health &amp; Prophylaxis:</strong> Routine deworming, ectoparasite dipping, and systematic
+          immunization against Peste des Petits Ruminants (PPR).</li>
+        <li><strong>Intensive Fattening:</strong> 90-day concentrated feedlot finishing utilizing high-protein forage,
+          maize bran, molasses, and mineral licks for superior muscling.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Prime fattened rams for festive celebrations (Eid-el-Kabir, Christmas) and events</li>
+        <li>Breeding pairs (bucks, does, rams, ewes) for outgrowers and commercial livestock farms</li>
+        <li>Live market-weight goats and sheep for hospitality and meat wholesale buyers</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Reserve Livestock <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-ruminants">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Ruminants &amp; Specialized Mini-Livestock</div>
+      <div class="job-meta">
+        <span class="tag">Unit 02: Animal Production</span>
+        <span class="tag">Cattle Feedlot</span>
+        <span class="tag">Rabbitry &amp; Grasscutter</span>
+      </div>
+      <p>
+        This specialized unit covers intensive feedlot cattle conditioning alongside high-efficiency mini-livestock
+        breeding. By combining beef cattle backgrounding with commercial rabbit and domesticated grasscutter (cane rat)
+        production, we deliver diverse, premium protein lines.
+      </p>
+      <h4>Livestock Management &amp; Systems</h4>
+      <ul>
+        <li><strong>Cattle Feedlot:</strong> Backgrounding and finishing of White Fulani and Sokoto Gudali bulls on
+          formulated silage, brewer's spent grains, and high-protein pasture.</li>
+        <li><strong>Commercial Rabbitry:</strong> Prolific New Zealand White, Chinchilla, and California breeds raised
+          in multi-tier galvanized wire hutches with automated watering.</li>
+        <li><strong>Grasscutter Domestication:</strong> Captive breeding of <em>Thryonomys swinderianus</em> in shaded
+          brick pens with elephant grass, sugarcane, and mineral-enriched concentrate feeding.</li>
+        <li><strong>Veterinary Oversight:</strong> Continuous health checks, prophylactic treatments, and biosecurity
+          across all pens.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Live fattened beef bulls ready for meat markets and large-scale catering</li>
+        <li>Breeding colonies/trios and starter kits for rabbit and grasscutter farmers</li>
+        <li>Lean, dressed, cholesterol-conscious rabbit and grasscutter meat for specialty markets</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Inquire on Livestock <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 03: Aquaculture Production Modals -->
+  <div class="modal-overlay" id="modal-catfish">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Intensive Catfish Aquaculture &amp; Processing</div>
+      <div class="job-meta">
+        <span class="tag">Unit 03: Aquaculture</span>
+        <span class="tag">Clarias Gariepinus</span>
+        <span class="tag">Fresh &amp; Oven-Smoked</span>
+      </div>
+      <p>
+        Our aquaculture division leverages deep borehole freshwater, earthen grow-out ponds, and concrete nursing tanks
+        to rear fast-growing African catfish (<em>Clarias gariepinus</em>) under stringent water quality, feeding, and
+        biosecurity regimes.
+      </p>
+      <h4>Aquaculture Operations &amp; Quality Control</h4>
+      <ul>
+        <li><strong>Hatchery &amp; Nursery:</strong> High-survival fingerling and juvenile production from select
+          broodstock with regular bi-weekly size grading to eliminate cannibalism.</li>
+        <li><strong>Water Quality Dynamics:</strong> Continuous monitoring of dissolved oxygen (DO), temperature, and pH
+          with systematic pond flushing and solar aeration.</li>
+        <li><strong>Nutritional Precision:</strong> Feeding premium extruded floating feed (42–45% crude protein)
+          calibrated to body weight for maximum feed conversion ratio.</li>
+        <li><strong>Kiln Processing:</strong> Value-added smoking in stainless steel, temperature-regulated ovens
+          yielding aromatic, hygienic, and sand-free smoked catfish.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Live table-size catfish (1kg, 1.5kg, 2kg+) for hotels, restaurants, and fish merchants</li>
+        <li>Robust, disease-resistant juveniles (6–8cm) for commercial grow-out operators</li>
+        <li>Vacuum-sealed, kiln-smoked catfish with extended shelf life and zero chemical additives</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Fresh / Smoked Fish <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-tilapia">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Sustainable Tilapia Farming &amp; Polyculture</div>
+      <div class="job-meta">
+        <span class="tag">Unit 03: Aquaculture</span>
+        <span class="tag">Oreochromis Niloticus</span>
+        <span class="tag">Fresh Table Fish</span>
+      </div>
+      <p>
+        We farm Nile Tilapia (<em>Oreochromis niloticus</em>) in dedicated earthen and semi-intensive concrete ponds. By
+        prioritizing clean running water, plankton-rich pond ecology, and balanced floating rations, we produce sweet,
+        firm-fleshed table tilapia.
+      </p>
+      <h4>Pond Culture &amp; Sustainable Practices</h4>
+      <ul>
+        <li><strong>Monosex Stocking:</strong> Stocking 100% all-male monosex fingerlings to prevent uncontrolled pond
+          reproduction and ensure rapid, uniform growth rates.</li>
+        <li><strong>Plankton &amp; Feed Management:</strong> Controlled organic pond manuring to promote natural
+          phytoplankton bloom combined with high-protein supplementary feeds.</li>
+        <li><strong>Oxygenation:</strong> Surface aeration and freshwater exchange to support clean breathing and
+          optimal fish vigor.</li>
+        <li><strong>Careful Harvest:</strong> Seine netting at dawn with immediate cold-chain icing to preserve pristine
+          freshness and texture.</li>
+      </ul>
+      <h4>Commercial Offerings</h4>
+      <ul>
+        <li>Live and chilled table-size whole tilapia for seafood markets, retailers, and restaurants</li>
+        <li>Quality monosex tilapia fingerlings for aquaculture farms and polyculture systems</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Tilapia Supply <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 04: Apiary & Honey Production Modals -->
+  <div class="modal-overlay" id="modal-apiary">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Scientific Apiary Management &amp; Bee Health</div>
+      <div class="job-meta">
+        <span class="tag">Unit 04: Apiary &amp; Honey</span>
+        <span class="tag">Modern Hives</span>
+        <span class="tag">Farm Pollination Services</span>
+      </div>
+      <p>
+        Soardale's apiculture operations focus on scientific hive stewardship, healthy colony propagation (<em>Apis
+          mellifera adansonii</em>), and the vital ecological service of crop pollination across our farmlands and
+        surrounding agro-forestry belts.
+      </p>
+      <h4>Apiary Protocols &amp; Colony Stewardship</h4>
+      <ul>
+        <li><strong>Hive Construction:</strong> Precision-built Langstroth and Kenyan Top-Bar (KTB) hives manufactured
+          from seasoned, non-toxic hardwoods.</li>
+        <li><strong>Site Selection:</strong> Shaded, predator-free apiary yards strategically located near flowering
+          crops, citrus trees, and clean perennial water points.</li>
+        <li><strong>Colony Inspections:</strong> Gentle, smoke-moderated inspections monitoring queen laying, brood
+          density, and honey super development.</li>
+        <li><strong>Pest Defense:</strong> Mechanical ant barriers, hive beetle traps, and wax moth prevention
+          maintained without synthetic chemicals.</li>
+        <li><strong>Pollination Services:</strong> Controlled hive placement boosting fruit-set, seed yield, and crop
+          quality for regional crop and orchard farms.</li>
+      </ul>
+      <h4>Commercial Services &amp; Assets</h4>
+      <ul>
+        <li>Colonized beehives and queen bee packages for new and expanding beekeepers</li>
+        <li>Turnkey apiary design, installation, and seasonal management consultancy</li>
+        <li>Agricultural pollination contracts for commercial crop growers</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Request Apiary Services <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-honey">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="job-title">Pure Raw Honey Extraction &amp; Hive By-Products</div>
+      <div class="job-meta">
+        <span class="tag">Unit 04: Apiary &amp; Honey</span>
+        <span class="tag">100% Unadulterated</span>
+        <span class="tag">Cold-Filtered • Raw</span>
+      </div>
+      <p>
+        We harvest and bottle 100% pure, raw, unadulterated multi-flora honey and natural hive by-products. Our
+        cold-processing technique ensures that every jar retains its natural enzymes, floral aroma, rich antioxidants,
+        and wholesome pollen content.
+      </p>
+      <h4>Harvesting &amp; Processing Excellence</h4>
+      <ul>
+        <li><strong>Capped Comb Harvesting:</strong> Harvesting only 100% sealed, fully ripe honeycombs to guarantee
+          moisture levels below 18% for natural shelf stability.</li>
+        <li><strong>Cold Extraction:</strong> Uncapping and centrifugal extraction performed strictly without heat
+          treatment or pasteurization to preserve living enzymes.</li>
+        <li><strong>Gravity Micro-Filtration:</strong> Stainless steel double-mesh straining that removes wax particles
+          while retaining microscopic bee pollen and propolis traces.</li>
+        <li><strong>Zero Additives:</strong> Certified 100% free of corn syrup, added sugars, artificial colors, or
+          chemical preservatives.</li>
+      </ul>
+      <h4>Products &amp; Packaging Formats</h4>
+      <ul>
+        <li>Pure raw bottled honey in food-grade glass and squeeze jars (350ml, 500ml, 1 Litre, and 25-Litre bulk
+          containers)</li>
+        <li>Clean, cosmetic and pharmaceutical-grade pure beeswax blocks for body care and polish makers</li>
+        <li>Raw propolis and natural bee pollen for wellness and therapeutic applications</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="contact.html" class="btn btn-amber">Order Pure Honey <span class="btn-arrow">→</span></a>
+        <a href="tel:+2349052133711" class="btn btn-outline">Call Farm Desk</a>
+        <button class="btn btn-outline modal-close">Close</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
