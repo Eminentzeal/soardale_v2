@@ -620,7 +620,6 @@ nav.main-nav a.active {
 
 .card {
   background: var(--cream);
-  /* border: 1px solid var(--line-soft); */
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   padding: 30px;
@@ -1366,14 +1365,14 @@ footer.site-footer {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(190, 122, 45, 0.9);
-  color: #fff;
-  border: 3px solid rgba(255, 255, 255, 0.85);
+  background: rgba(190, 122, 45, 0.1);
+  color: rgb(255, 255, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.50);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 12px rgba(190, 122, 45, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 12px rgba(190, 122, 45, 0.15);
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease, visibility 0.3s ease;
   z-index: 10;
   opacity: 1;

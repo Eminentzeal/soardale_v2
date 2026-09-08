@@ -144,6 +144,44 @@ document.addEventListener('DOMContentLoaded', function () {
       videoPlayBtn.classList.remove('is-playing');
       if (videoContainer) videoContainer.classList.remove('playing');
     });
+
+    // Video badge countdown — shows remaining time
+    var videoBadgeTime = document.getElementById('videoBadgeTime');
+    if (videoBadgeTime) {
+      function formatBadgeTime(seconds) {
+        var s = Math.ceil(seconds);
+        if (s < 0) s = 0;
+        var m = Math.floor(s / 60);
+        var sec = s % 60;
+        return m + ':' + (sec < 10 ? '0' : '') + sec;
+      }
+
+      function updateBadgeCountdown() {
+        var remaining = companyVideo.duration - companyVideo.currentTime;
+        if (isNaN(remaining) || !isFinite(remaining)) return;
+        videoBadgeTime.textContent = formatBadgeTime(remaining) + ' MIN REMAINING';
+      }
+
+      function setBadgeToFull() {
+        if (isNaN(companyVideo.duration) || !isFinite(companyVideo.duration)) return;
+        videoBadgeTime.textContent = formatBadgeTime(companyVideo.duration) + ' MIN OVERVIEW';
+      }
+
+      // Handle race condition: metadata may already be loaded (preload="metadata")
+      if (companyVideo.readyState >= 1) {
+        setBadgeToFull();
+      }
+      companyVideo.addEventListener('loadedmetadata', setBadgeToFull);
+
+      // Update as the video plays
+      companyVideo.addEventListener('timeupdate', updateBadgeCountdown);
+
+      // Reset to full duration when video ends
+      companyVideo.addEventListener('ended', setBadgeToFull);
+
+      // When user seeks, update badge immediately
+      companyVideo.addEventListener('seeked', updateBadgeCountdown);
+    }
   }
 
 });
